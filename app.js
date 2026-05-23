@@ -377,6 +377,10 @@ function getPlaceDetails(place) {
   };
 }
 
+function googleMapsUrl(place) {
+  return `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(`${place.name} ${place.lat},${place.lng}`)}`;
+}
+
 function getFilteredPlaces() {
   const query = state.query.trim().toLowerCase();
   return getPlaces()
@@ -426,8 +430,14 @@ function renderList(places) {
           .map((tag) => `<span class="tag ${tagClass(place, tag)}">${escapeHtml(tag)}</span>`)
           .join("")}
       </div>
+      <a class="map-link" href="${googleMapsUrl(place)}" target="_blank" rel="noopener noreferrer" aria-label="${escapeHtml(place.name)}をGoogleマップで開く">
+        Googleマップで開く
+      </a>
     `;
     card.addEventListener("click", () => focusPlace(place.id));
+    card.querySelector(".map-link").addEventListener("click", (event) => {
+      event.stopPropagation();
+    });
     card.addEventListener("keydown", (event) => {
       if (event.key === "Enter" || event.key === " ") {
         event.preventDefault();
@@ -468,6 +478,9 @@ function popupHtml(place) {
     <div class="popup-facilities">
       ${details.facilities.map((item) => `<span>${escapeHtml(item)}</span>`).join("")}
     </div>
+    <a class="map-link popup-map-link" href="${googleMapsUrl(place)}" target="_blank" rel="noopener noreferrer">
+      Googleマップで開く
+    </a>
   `;
 }
 
