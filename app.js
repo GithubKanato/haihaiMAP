@@ -651,8 +651,7 @@ function setupSheetDrag() {
     const fromSheetTop = clientY - rect.top;
     const isCollapsed = elements.appShell.classList.contains("sheet-collapsed");
     const canStartFromTop = fromSheetTop <= 92;
-    const canPullFromScrolledTop = elements.panel.scrollTop <= 4;
-    return isMobileSheet() && (isCollapsed || canStartFromTop || canPullFromScrolledTop);
+    return isMobileSheet() && (isCollapsed || canStartFromTop);
   }
 
   function beginDrag(clientY) {
