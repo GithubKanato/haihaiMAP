@@ -633,46 +633,40 @@ function setupSheetDrag() {
   let currentY = 0;
   let dragging = false;
 
-  elements.panel.addEventListener("pointerdown", (event) => {
-    if (!isMobileSheet()) return;
-
+  function canStartDrag(clientY) {
     const rect = elements.panel.getBoundingClientRect();
-    const fromSheetTop = event.clientY - rect.top;
+    const fromSheetTop = clientY - rect.top;
     const isCollapsed = elements.appShell.classList.contains("sheet-collapsed");
     const canStartFromTop = fromSheetTop <= 92;
     const canPullFromScrolledTop = elements.panel.scrollTop <= 4;
-    if (!isCollapsed && !canStartFromTop && !canPullFromScrolledTop) return;
+    return isMobileSheet() && (isCollapsed || canStartFromTop || canPullFromScrolledTop);
+  }
 
+  function beginDrag(clientY) {
     dragging = true;
-    startY = event.clientY;
-    currentY = event.clientY;
+    startY = clientY;
+    currentY = clientY;
     elements.panel.classList.add("dragging");
-    elements.panel.setPointerCapture(event.pointerId);
-  });
+  }
 
-  elements.panel.addEventListener("pointermove", (event) => {
-    if (!dragging) return;
+  function updateDrag(clientY) {
+    if (!dragging) return 0;
 
-    currentY = event.clientY;
+    currentY = clientY;
     const deltaY = currentY - startY;
     const isCollapsed = elements.appShell.classList.contains("sheet-collapsed");
     const offset = isCollapsed ? Math.min(0, Math.max(deltaY, -90)) : Math.max(0, Math.min(deltaY, 140));
     elements.panel.style.transform = `translateY(${offset}px)`;
-    if (Math.abs(deltaY) > 8) {
-      event.preventDefault();
-    }
-  });
+    return deltaY;
+  }
 
-  function finishDrag(event) {
+  function endDrag() {
     if (!dragging) return;
 
     const deltaY = currentY - startY;
     dragging = false;
     elements.panel.classList.remove("dragging");
     elements.panel.style.transform = "";
-    if (elements.panel.hasPointerCapture(event.pointerId)) {
-      elements.panel.releasePointerCapture(event.pointerId);
-    }
 
     if (deltaY > 52) {
       setSheetCollapsed(true);
@@ -680,6 +674,62 @@ function setupSheetDrag() {
       setSheetCollapsed(false);
     }
   }
+
+  elements.panel.addEventListener("pointerdown", (event) => {
+    if (!canStartDrag(event.clientY)) return;
+
+    beginDrag(event.clientY);
+    elements.panel.setPointerCapture(event.pointerId);
+  });
+
+  elements.panel.addEventListener("pointermove", (event) => {
+    if (!dragging) return;
+
+    const deltaY = updateDrag(event.clientY);
+    if (Math.abs(deltaY) > 8) {
+      event.preventDefault();
+    }
+  });
+
+  function finishDrag(event) {
+    if (elements.panel.hasPointerCapture(event.pointerId)) {
+      elements.panel.releasePointerCapture(event.pointerId);
+    }
+    endDrag();
+  }
+
+  elements.panel.addEventListener("touchstart", (event) => {
+    if (event.touches.length !== 1) return;
+
+    const touch = event.touches[0];
+    if (!canStartDrag(touch.clientY)) return;
+    beginDrag(touch.clientY);
+  });
+
+  elements.panel.addEventListener(
+    "touchmove",
+    (event) => {
+      if (!dragging || event.touches.length !== 1) return;
+
+      const deltaY = updateDrag(event.touches[0].clientY);
+      if (Math.abs(deltaY) > 8) {
+        event.preventDefault();
+      }
+    },
+    { passive: false }
+  );
+
+  elements.panel.addEventListener("touchend", () => {
+    endDrag();
+  });
+
+  elements.panel.addEventListener("touchcancel", () => {
+    if (dragging) {
+      dragging = false;
+      elements.panel.classList.remove("dragging");
+      elements.panel.style.transform = "";
+    }
+  });
 
   elements.panel.addEventListener("pointerup", finishDrag);
   elements.panel.addEventListener("pointercancel", finishDrag);
