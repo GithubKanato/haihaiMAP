@@ -1,0 +1,96 @@
+<!doctype html>
+<html lang="ja">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>はいはいMAP</title>
+    <link rel="preconnect" href="https://unpkg.com" />
+    <link rel="preconnect" href="https://tile.openstreetmap.org" />
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+      integrity="sha256-p4NxAoJBhIINfQpPaU8h+qS2Y2wR0pP6p7Qn7p6CkaA="
+      crossorigin=""
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <main class="app-shell">
+      <aside class="panel" aria-label="はいはいできる場所">
+        <header class="brand">
+          <div>
+            <p class="eyebrow">family crawl spots</p>
+            <h1>はいはいMAP</h1>
+          </div>
+          <button class="icon-button" id="locateButton" type="button" title="現在地">
+            <span aria-hidden="true">◎</span>
+            <span class="sr-only">現在地</span>
+          </button>
+        </header>
+
+        <section class="controls" aria-label="検索と条件">
+          <label class="search">
+            <span class="sr-only">検索</span>
+            <input id="searchInput" type="search" placeholder="場所・メモを検索" autocomplete="off" />
+          </label>
+
+          <div class="segmented" role="group" aria-label="場所タイプ">
+            <button class="segment active" type="button" data-filter="all">すべて</button>
+            <button class="segment" type="button" data-filter="indoor">屋内</button>
+            <button class="segment" type="button" data-filter="outdoor">屋外</button>
+          </div>
+
+          <label class="toggle">
+            <input id="quietOnly" type="checkbox" />
+            <span>すいている場所</span>
+          </label>
+        </section>
+
+        <section class="summary" aria-live="polite">
+          <strong id="resultCount">0件</strong>
+          <span>保護者同伴・現地ルール優先</span>
+        </section>
+
+        <section class="list" id="placeList" aria-label="場所一覧"></section>
+
+        <form class="add-form" id="addForm">
+          <h2>スポット登録</h2>
+          <div class="form-grid">
+            <label>
+              <span>名前</span>
+              <input id="placeName" required maxlength="28" placeholder="近所の芝生広場" />
+            </label>
+            <label>
+              <span>メモ</span>
+              <input id="placeNote" required maxlength="72" placeholder="日陰あり、平日午前が静か" />
+            </label>
+            <label>
+              <span>緯度</span>
+              <input id="placeLat" required inputmode="decimal" placeholder="35.6812" />
+            </label>
+            <label>
+              <span>経度</span>
+              <input id="placeLng" required inputmode="decimal" placeholder="139.7671" />
+            </label>
+          </div>
+          <button class="primary-button" type="submit">追加</button>
+        </form>
+      </aside>
+
+      <section class="map-wrap" aria-label="地図">
+        <div id="map"></div>
+        <div class="map-status" id="mapStatus">地図を読み込み中</div>
+        <button class="mobile-sheet-toggle" id="sheetToggle" type="button" aria-expanded="true">
+          <span id="sheetToggleText">一覧を小さく</span>
+        </button>
+      </section>
+    </main>
+
+    <script
+      src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+      integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="
+      crossorigin=""
+    ></script>
+    <script src="app.js"></script>
+  </body>
+</html>
