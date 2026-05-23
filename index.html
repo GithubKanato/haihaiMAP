@@ -12,7 +12,7 @@
       integrity="sha256-p4NxAoJBhIINfQpPaU8h+qS2Y2wR0pP6p7Qn7p6CkaA="
       crossorigin=""
     />
-    <link rel="stylesheet" href="styles.css?v=20260523-maplink" />
+    <link rel="stylesheet" href="styles.css?v=20260523-categories" />
   </head>
   <body>
     <main class="app-shell">
@@ -80,6 +80,12 @@
 
       <section class="map-wrap" aria-label="地図">
         <div id="map"></div>
+        <div class="map-legend" aria-label="マーカーの種類">
+          <span><i class="legend-dot park"></i>公園</span>
+          <span><i class="legend-dot cafe"></i>カフェ</span>
+          <span><i class="legend-dot babyroom"></i>ベビールーム</span>
+          <span><i class="legend-dot indoor"></i>屋内</span>
+        </div>
         <div class="map-status" id="mapStatus">地図を読み込み中</div>
         <button class="mobile-sheet-toggle" id="sheetToggle" type="button" aria-expanded="true">
           <span id="sheetToggleText">一覧を小さく</span>
@@ -92,6 +98,6 @@
       integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="
       crossorigin=""
     ></script>
-    <script src="app.js?v=20260523-scrollfix"></script>
+    <script src="app.js?v=20260523-categories"></script>
   </body>
 </html>

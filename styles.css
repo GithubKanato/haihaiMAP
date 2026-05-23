@@ -247,6 +247,36 @@ h2 {
   text-align: right;
 }
 
+.category-pill {
+  width: fit-content;
+  border-radius: 999px;
+  padding: 4px 9px;
+  background: var(--mint-soft);
+  color: var(--accent-strong);
+  font-size: 11px;
+  font-weight: 900;
+}
+
+.category-pill.park {
+  background: #e9f4d9;
+  color: #3e6628;
+}
+
+.category-pill.cafe {
+  background: #f8eadb;
+  color: #7a431d;
+}
+
+.category-pill.babyroom {
+  background: #fde6ef;
+  color: #9b315d;
+}
+
+.category-pill.indoor {
+  background: #dff1f5;
+  color: #24464c;
+}
+
 .note {
   color: var(--muted);
   font-size: 13px;
@@ -586,6 +616,56 @@ h2 {
   display: none;
 }
 
+.map-legend {
+  position: absolute;
+  top: 18px;
+  left: 18px;
+  z-index: 500;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 7px;
+  max-width: min(520px, calc(100vw - 36px));
+  border: 1px solid rgba(24, 32, 29, 0.12);
+  border-radius: 8px;
+  padding: 8px;
+  background: rgba(255, 255, 255, 0.92);
+  color: var(--ink);
+  font-size: 12px;
+  font-weight: 800;
+  box-shadow: 0 8px 26px rgba(24, 32, 29, 0.15);
+  backdrop-filter: blur(10px);
+}
+
+.map-legend span {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.legend-dot {
+  width: 10px;
+  height: 10px;
+  border: 2px solid #ffffff;
+  border-radius: 999px;
+  box-shadow: 0 1px 4px rgba(24, 32, 29, 0.2);
+}
+
+.legend-dot.park {
+  background: #5f8d3b;
+}
+
+.legend-dot.cafe {
+  background: #b56b2a;
+}
+
+.legend-dot.babyroom {
+  background: #d9578f;
+}
+
+.legend-dot.indoor {
+  background: #207567;
+}
+
 .leaflet-popup-content {
   margin: 12px 14px;
   width: min(300px, 72vw) !important;
@@ -631,6 +711,17 @@ h2 {
   margin: 0 0 8px;
   color: #526158;
   line-height: 1.45;
+}
+
+.popup-category {
+  display: inline-flex;
+  margin: 0 0 8px;
+  border-radius: 999px;
+  padding: 3px 8px;
+  background: #fde6ef;
+  color: #9b315d;
+  font-size: 11px;
+  font-weight: 900;
 }
 
 .popup-facilities {
@@ -793,6 +884,15 @@ h2 {
     right: 12px;
     bottom: calc(62dvh + 12px);
     max-width: min(300px, calc(100vw - 24px));
+  }
+
+  .map-legend {
+    top: 12px;
+    left: 12px;
+    max-width: calc(100vw - 86px);
+    gap: 5px;
+    padding: 7px;
+    font-size: 11px;
   }
 
   .app-shell.sheet-collapsed .map-status {

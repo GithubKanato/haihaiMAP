@@ -5,6 +5,7 @@ const defaultPlaces = [
     lat: 35.1739,
     lng: 137.0897,
     type: "outdoor",
+    category: "park",
     quiet: true,
     score: 94,
     tags: ["愛知", "芝生", "広い", "授乳室"],
@@ -22,6 +23,7 @@ const defaultPlaces = [
     lat: 35.1004,
     lng: 136.8025,
     type: "outdoor",
+    category: "park",
     quiet: true,
     score: 90,
     tags: ["愛知", "芝生", "木陰", "駐車場"],
@@ -39,6 +41,7 @@ const defaultPlaces = [
     lat: 35.1707,
     lng: 136.9086,
     type: "indoor",
+    category: "indoor",
     quiet: false,
     score: 76,
     tags: ["愛知", "屋内", "駅近", "雨の日"],
@@ -56,6 +59,7 @@ const defaultPlaces = [
     lat: 35.0906,
     lng: 136.8782,
     type: "indoor",
+    category: "indoor",
     quiet: false,
     score: 79,
     tags: ["愛知", "屋内", "授乳室", "観光"],
@@ -73,6 +77,7 @@ const defaultPlaces = [
     lat: 35.0486,
     lng: 137.0411,
     type: "outdoor",
+    category: "park",
     quiet: true,
     score: 87,
     tags: ["愛知", "芝生", "休憩", "駐車場"],
@@ -90,6 +95,7 @@ const defaultPlaces = [
     lat: 35.3607,
     lng: 136.8076,
     type: "outdoor",
+    category: "park",
     quiet: true,
     score: 88,
     tags: ["愛知", "芝生", "広い", "尾張"],
@@ -107,6 +113,7 @@ const defaultPlaces = [
     lat: 35.0843,
     lng: 137.1709,
     type: "outdoor",
+    category: "park",
     quiet: true,
     score: 82,
     tags: ["愛知", "三河", "芝生", "川沿い"],
@@ -124,6 +131,7 @@ const defaultPlaces = [
     lat: 35.3723,
     lng: 136.8122,
     type: "outdoor",
+    category: "park",
     quiet: false,
     score: 84,
     tags: ["岐阜", "芝生", "水族館", "休憩"],
@@ -141,6 +149,7 @@ const defaultPlaces = [
     lat: 35.5078,
     lng: 136.7813,
     type: "outdoor",
+    category: "park",
     quiet: true,
     score: 85,
     tags: ["岐阜", "芝生", "広い", "家族向け"],
@@ -158,6 +167,7 @@ const defaultPlaces = [
     lat: 35.0317,
     lng: 136.7024,
     type: "indoor",
+    category: "indoor",
     quiet: false,
     score: 73,
     tags: ["三重", "屋内", "観光", "雨の日"],
@@ -175,6 +185,7 @@ const defaultPlaces = [
     lat: 35.0748,
     lng: 136.5879,
     type: "outdoor",
+    category: "park",
     quiet: true,
     score: 83,
     tags: ["三重", "芝生", "広い", "遊具"],
@@ -192,6 +203,7 @@ const defaultPlaces = [
     lat: 35.2386,
     lng: 136.806,
     type: "indoor",
+    category: "cafe",
     quiet: false,
     score: 86,
     tags: ["稲沢", "カフェ", "キッズルーム", "屋内", "食事"],
@@ -211,6 +223,7 @@ const defaultPlaces = [
     lat: 35.3398,
     lng: 136.8424,
     type: "indoor",
+    category: "cafe",
     quiet: false,
     score: 84,
     tags: ["一宮", "カフェ", "キッズスペース", "モーニング", "駐車場"],
@@ -230,6 +243,7 @@ const defaultPlaces = [
     lat: 35.290368,
     lng: 136.816224,
     type: "indoor",
+    category: "cafe",
     quiet: true,
     score: 88,
     tags: ["一宮", "カフェ", "キッズスペース", "キッズルーム", "ランチ"],
@@ -249,6 +263,7 @@ const defaultPlaces = [
     lat: 35.3125,
     lng: 136.7954,
     type: "indoor",
+    category: "cafe",
     quiet: true,
     score: 82,
     tags: ["一宮", "カフェ", "キッズスペース", "遊具", "福祉施設"],
@@ -261,6 +276,126 @@ const defaultPlaces = [
     caution: "療育サポートプラザ内のため、施設利用者への配慮を優先。",
     source: "一宮モーニング公式 / 樫の木福祉会",
     sourceUrl: "https://ichinomiya-morning.com/shop/67-2/",
+  },
+  {
+    id: "leaf-walk-inazawa-babyroom",
+    name: "リーフウォーク稲沢 赤ちゃんルーム/キッズスクエア",
+    lat: 35.2568,
+    lng: 136.8162,
+    type: "indoor",
+    category: "babyroom",
+    quiet: false,
+    score: 89,
+    tags: ["稲沢", "ベビールーム", "キッズスペース", "授乳室", "屋内"],
+    note: "赤ちゃんルームと小さなお子さまが遊べるキッズスクエアがある大型商業施設。",
+    area: "稲沢市長野",
+    bestTime: "平日午前、休日は昼前まで",
+    facilities: ["赤ちゃんルーム", "授乳", "おむつ替え", "キッズスクエア", "キッズトイレ"],
+    ground: "屋内キッズスクエア。はいはいは混雑と対象年齢表示を確認して利用。",
+    crowd: "休日昼以降は買い物客で混みやすい。",
+    caution: "公式案内ではキッズスクエアはモール棟1F中央出入口付近。現地表示を確認。",
+    source: "リーフウォーク稲沢公式",
+    sourceUrl: "https://walk-uny.com/leaf-walk/about/facilities.html",
+  },
+  {
+    id: "telass-walk-ichinomiya-babyroom",
+    name: "テラスウォーク一宮 ベビールーム/キッズ遊戯施設",
+    lat: 35.3138,
+    lng: 136.8179,
+    type: "indoor",
+    category: "babyroom",
+    quiet: false,
+    score: 86,
+    tags: ["一宮", "ベビールーム", "キッズ遊戯施設", "授乳室", "屋内"],
+    note: "ベビールームやキッズ遊戯施設の案内がある、一宮市内の大型商業施設。",
+    area: "一宮市両郷町",
+    bestTime: "平日午前、休日は開店直後",
+    facilities: ["ベビールーム", "授乳", "おむつ替え", "キッズ遊戯施設", "駐車場"],
+    ground: "屋内キッズ遊戯施設。はいはい利用は床面と対象年齢を現地確認。",
+    crowd: "週末・雨の日は親子連れが増えやすい。",
+    caution: "遊戯施設の利用ルールと混雑状況を確認して短時間利用。",
+    source: "テラスウォーク一宮公式",
+    sourceUrl: "https://walk-uny.com/telass-walk/about/facilities.html",
+  },
+  {
+    id: "aeon-kisogawa-babyroom",
+    name: "イオンモール木曽川 ベビールーム",
+    lat: 35.3476,
+    lng: 136.7797,
+    type: "indoor",
+    category: "babyroom",
+    quiet: false,
+    score: 84,
+    tags: ["一宮", "イオン", "ベビールーム", "屋内", "駅近"],
+    note: "小さなお子様連れにも配慮した設備案内がある大型イオンモール。",
+    area: "一宮市木曽川町",
+    bestTime: "平日午前、休日は開店直後",
+    facilities: ["ベビールーム", "おむつ替え", "授乳", "ベビーカー", "駐車場"],
+    ground: "ベビールーム中心。はいはいは専用スペースや現地案内を確認。",
+    crowd: "休日・映画館利用時間帯は混みやすい。",
+    caution: "フロアマップと現地表示でベビールーム位置を確認。",
+    source: "イオンモール木曽川公式",
+    sourceUrl: "https://kisogawa.aeonmall.jp/guide",
+  },
+  {
+    id: "aeon-nagakute-babyroom",
+    name: "イオンモール長久手 キッズスペース/ベビールーム",
+    lat: 35.1739,
+    lng: 137.0489,
+    type: "indoor",
+    category: "babyroom",
+    quiet: false,
+    score: 87,
+    tags: ["長久手", "イオン", "キッズスペース", "ベビールーム", "屋内"],
+    note: "キッズスペースが充実し、ベビールームの案内もある駅直結型モール。",
+    area: "長久手市勝入塚",
+    bestTime: "平日午前、休日は早め",
+    facilities: ["キッズスペース", "ベビールーム", "授乳", "おむつ替え", "駅直結"],
+    ground: "屋内キッズスペース。小さい子向け表示のある場所を選ぶ。",
+    crowd: "休日はファミリー層で混みやすい。",
+    caution: "対象年齢や利用ルールを現地表示で確認。",
+    source: "イオンモール長久手公式",
+    sourceUrl: "https://nagakute-aeonmall.com/special/lists/kidsspace/category_2/",
+  },
+  {
+    id: "aeon-odaka-babyroom",
+    name: "イオンモール大高 キッズ施設/ベビールーム",
+    lat: 35.0529,
+    lng: 136.9474,
+    type: "indoor",
+    category: "babyroom",
+    quiet: false,
+    score: 85,
+    tags: ["名古屋", "イオン", "キッズスペース", "ベビールーム", "屋内"],
+    note: "キッズ施設情報がまとまっており、赤ちゃん連れの休憩候補にしやすい大型モール。",
+    area: "名古屋市緑区",
+    bestTime: "平日午前、休日は開店直後",
+    facilities: ["キッズスペース", "ベビールーム", "おむつ替え", "ファミリー席", "駐車場"],
+    ground: "屋内キッズスペースやファミリーエリア。はいはいは対象スペースのみ。",
+    crowd: "休日と雨の日はかなり混みやすい。",
+    caution: "遊び場内でのおむつ替え不可など、公式ルールを確認。",
+    source: "イオンモール大高公式",
+    sourceUrl: "https://www.aeon.jp/sc/odaka/special/kidsguide/index.html",
+  },
+  {
+    id: "aeon-noritake-babyroom",
+    name: "イオンモール Nagoya Noritake Garden ベビールーム",
+    lat: 35.1774,
+    lng: 136.8803,
+    type: "indoor",
+    category: "babyroom",
+    quiet: false,
+    score: 83,
+    tags: ["名古屋", "イオン", "ベビールーム", "授乳室", "屋内"],
+    note: "ベビーシート、浄水給湯機、授乳室などを備えたベビールーム案内があるモール。",
+    area: "名古屋市西区",
+    bestTime: "平日午前、休日は開店直後",
+    facilities: ["ベビールーム", "授乳室", "おむつ替え", "給湯", "屋内"],
+    ground: "ベビールーム中心。はいはいより授乳・おむつ替え・休憩向き。",
+    crowd: "名駅近くで休日は混みやすい。",
+    caution: "はいはい用プレイスペースの有無は現地で確認。",
+    source: "イオンモール Nagoya Noritake Garden公式",
+    sourceUrl: "https://nagoya-noritake-garden.aeonmall.com/special/lists/facility",
   },
 ];
 
@@ -404,6 +539,26 @@ function tagClass(place, tag) {
   return "";
 }
 
+function categoryLabel(place) {
+  const labels = {
+    park: "公園",
+    cafe: "カフェ",
+    babyroom: "ベビールーム",
+    indoor: "屋内",
+  };
+  return labels[place.category] || labels[place.type] || "スポット";
+}
+
+function categoryColor(place) {
+  const colors = {
+    park: "#5f8d3b",
+    cafe: "#b56b2a",
+    babyroom: "#d9578f",
+    indoor: "#207567",
+  };
+  return colors[place.category] || colors[place.type] || "#207567";
+}
+
 function renderList(places) {
   elements.count.textContent = `${places.length}件`;
   elements.list.innerHTML = "";
@@ -420,6 +575,7 @@ function renderList(places) {
         <h3>${escapeHtml(place.name)}</h3>
         <span class="score">${distance ? escapeHtml(distance) : escapeHtml(place.score)}</span>
       </header>
+      <span class="category-pill ${escapeHtml(place.category || place.type)}">${escapeHtml(categoryLabel(place))}</span>
       <p class="note">${escapeHtml(place.note)}</p>
       <dl class="mini-details">
         <div><dt>エリア</dt><dd>${escapeHtml(details.area)}</dd></div>
@@ -449,10 +605,9 @@ function renderList(places) {
 }
 
 function makeIcon(place) {
-  const color = place.type === "indoor" ? "#207567" : "#5f8d3b";
   return L.divIcon({
-    className: "place-marker",
-    html: `<span style="background:${color};"></span>`,
+    className: `place-marker ${place.category || place.type}`,
+    html: `<span style="background:${categoryColor(place)};"></span>`,
     iconSize: [22, 22],
     iconAnchor: [11, 11],
   });
@@ -466,6 +621,7 @@ function popupHtml(place) {
       <p class="popup-title">${escapeHtml(place.name)}</p>
       <span>${distance ? escapeHtml(distance) : `${escapeHtml(place.score)}点`}</span>
     </div>
+    <p class="popup-category">${escapeHtml(categoryLabel(place))}</p>
     <p class="popup-note">${escapeHtml(place.note)}</p>
     <dl class="popup-details">
       <div><dt>エリア</dt><dd>${escapeHtml(details.area)}</dd></div>
