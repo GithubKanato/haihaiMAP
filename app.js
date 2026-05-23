@@ -278,6 +278,7 @@ const state = {
 };
 
 const elements = {
+  panel: document.querySelector(".panel"),
   list: document.querySelector("#placeList"),
   count: document.querySelector("#resultCount"),
   status: document.querySelector("#mapStatus"),
@@ -613,6 +614,77 @@ function locateUser() {
   );
 }
 
+function setSheetCollapsed(collapsed) {
+  elements.appShell.classList.toggle("sheet-collapsed", collapsed);
+  elements.sheetToggle.setAttribute("aria-expanded", String(!collapsed));
+  elements.sheetToggleText.textContent = collapsed ? "一覧を開く" : "一覧を小さく";
+  if (!state.map) return;
+  setTimeout(() => {
+    state.map.invalidateSize();
+  }, 220);
+}
+
+function isMobileSheet() {
+  return window.matchMedia("(max-width: 820px)").matches;
+}
+
+function setupSheetDrag() {
+  let startY = 0;
+  let currentY = 0;
+  let dragging = false;
+
+  elements.panel.addEventListener("pointerdown", (event) => {
+    if (!isMobileSheet()) return;
+
+    const rect = elements.panel.getBoundingClientRect();
+    const fromSheetTop = event.clientY - rect.top;
+    const isCollapsed = elements.appShell.classList.contains("sheet-collapsed");
+    const canStartFromTop = fromSheetTop <= 92;
+    const canPullFromScrolledTop = elements.panel.scrollTop <= 4;
+    if (!isCollapsed && !canStartFromTop && !canPullFromScrolledTop) return;
+
+    dragging = true;
+    startY = event.clientY;
+    currentY = event.clientY;
+    elements.panel.classList.add("dragging");
+    elements.panel.setPointerCapture(event.pointerId);
+  });
+
+  elements.panel.addEventListener("pointermove", (event) => {
+    if (!dragging) return;
+
+    currentY = event.clientY;
+    const deltaY = currentY - startY;
+    const isCollapsed = elements.appShell.classList.contains("sheet-collapsed");
+    const offset = isCollapsed ? Math.min(0, Math.max(deltaY, -90)) : Math.max(0, Math.min(deltaY, 140));
+    elements.panel.style.transform = `translateY(${offset}px)`;
+    if (Math.abs(deltaY) > 8) {
+      event.preventDefault();
+    }
+  });
+
+  function finishDrag(event) {
+    if (!dragging) return;
+
+    const deltaY = currentY - startY;
+    dragging = false;
+    elements.panel.classList.remove("dragging");
+    elements.panel.style.transform = "";
+    if (elements.panel.hasPointerCapture(event.pointerId)) {
+      elements.panel.releasePointerCapture(event.pointerId);
+    }
+
+    if (deltaY > 52) {
+      setSheetCollapsed(true);
+    } else if (deltaY < -42) {
+      setSheetCollapsed(false);
+    }
+  }
+
+  elements.panel.addEventListener("pointerup", finishDrag);
+  elements.panel.addEventListener("pointercancel", finishDrag);
+}
+
 document.querySelectorAll(".segment").forEach((button) => {
   button.addEventListener("click", () => {
     document.querySelectorAll(".segment").forEach((item) => item.classList.remove("active"));
@@ -638,13 +710,7 @@ elements.quietOnly.addEventListener("change", (event) => {
 elements.locate.addEventListener("click", locateUser);
 
 elements.sheetToggle.addEventListener("click", () => {
-  const collapsed = elements.appShell.classList.toggle("sheet-collapsed");
-  elements.sheetToggle.setAttribute("aria-expanded", String(!collapsed));
-  elements.sheetToggleText.textContent = collapsed ? "一覧を開く" : "一覧を小さく";
-  if (!state.map) return;
-  setTimeout(() => {
-    state.map.invalidateSize();
-  }, 220);
+  setSheetCollapsed(!elements.appShell.classList.contains("sheet-collapsed"));
 });
 
 elements.addForm.addEventListener("submit", (event) => {
@@ -682,3 +748,4 @@ elements.addForm.addEventListener("submit", (event) => {
 });
 
 window.addEventListener("load", initMap);
+setupSheetDrag();

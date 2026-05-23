@@ -618,6 +618,11 @@ h2 {
     border-radius: 18px 18px 0 0;
     box-shadow: 0 -16px 44px rgba(22, 43, 35, 0.2);
     transition: max-height 180ms ease, transform 180ms ease;
+    will-change: max-height, transform;
+  }
+
+  .panel.dragging {
+    transition: none;
   }
 
   .app-shell.sheet-collapsed .panel {
@@ -646,6 +651,13 @@ h2 {
     padding: 14px 14px 10px;
     background: rgba(251, 253, 251, 0.96);
     backdrop-filter: blur(10px);
+    cursor: grab;
+    touch-action: none;
+    user-select: none;
+  }
+
+  .panel.dragging .brand {
+    cursor: grabbing;
   }
 
   .brand::before {
