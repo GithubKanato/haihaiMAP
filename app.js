@@ -397,6 +397,126 @@ const defaultPlaces = [
     source: "イオンモール Nagoya Noritake Garden公式",
     sourceUrl: "https://nagoya-noritake-garden.aeonmall.com/special/lists/facility",
   },
+  {
+    id: "malera-gifu-babyroom",
+    name: "モレラ岐阜 授乳室&キッズスペース",
+    lat: 35.4553,
+    lng: 136.6735,
+    type: "indoor",
+    category: "babyroom",
+    quiet: false,
+    score: 86,
+    tags: ["岐阜", "ベビールーム", "キッズスペース", "授乳室", "屋内"],
+    note: "授乳室&ベビールーム、キッズスペース、キッズガーデンの案内がある大型モール。",
+    area: "岐阜県本巣市",
+    bestTime: "平日午前、休日は開店直後",
+    facilities: ["授乳室", "ベビールーム", "キッズスペース", "調乳用給湯", "駐車場"],
+    ground: "屋内キッズスペース。はいはいは対象年齢と床面を確認して利用。",
+    crowd: "休日・雨の日はファミリーで混みやすい。",
+    caution: "2Fキッズスペースは混み具合を見て短時間利用。",
+    source: "モレラ岐阜公式",
+    sourceUrl: "https://malera-gifu.com/info-child/index.html",
+  },
+  {
+    id: "aeon-kuwana-babyroom",
+    name: "イオンモール桑名 PAPA'S ROOM",
+    lat: 35.074,
+    lng: 136.6488,
+    type: "indoor",
+    category: "babyroom",
+    quiet: false,
+    score: 85,
+    tags: ["三重", "イオン", "ベビールーム", "キッズトイレ", "屋内"],
+    note: "キッズトイレと赤ちゃん休憩室を併設したPAPA'S ROOMがある商業施設。",
+    area: "三重県桑名市",
+    bestTime: "平日午前、休日は開店直後",
+    facilities: ["赤ちゃん休憩室", "授乳室", "キッズトイレ", "ベビーカー", "駐車場"],
+    ground: "休憩室中心。はいはいは専用スペースの有無と混雑を現地確認。",
+    crowd: "休日昼以降は混みやすい。",
+    caution: "PAPA'S ROOMの場所と利用ルールを公式/現地表示で確認。",
+    source: "イオンモール桑名公式",
+    sourceUrl: "https://www.aeon.jp/sc/kuwana/info/kids-shop/facility.html",
+  },
+  {
+    id: "mie-kodomo-castle",
+    name: "三重県立みえこどもの城",
+    lat: 34.5489,
+    lng: 136.5137,
+    type: "indoor",
+    category: "indoor",
+    quiet: true,
+    score: 87,
+    tags: ["三重", "こども館", "授乳室", "ベビーシート", "屋内"],
+    note: "授乳室やベビーシートがあり、乳幼児連れ向けの案内がある屋内こども施設。",
+    area: "三重県松阪市",
+    bestTime: "平日午前、休日は開館直後",
+    facilities: ["授乳室", "ベビーシート", "ベビーカー預かり", "キッズトイレ", "屋内"],
+    ground: "施設内の乳幼児向けエリアを選ぶ。イベント内容により利用感が変わる。",
+    crowd: "休日やイベント日は混みやすい。",
+    caution: "一部バリアフリーが行き届いていない案内あり。移動経路を確認。",
+    source: "みえこどもの城公式",
+    sourceUrl: "https://www.mie-cc.or.jp/map/baby",
+  },
+  {
+    id: "hamamatsu-kodomokan",
+    name: "浜松こども館 はいはい・あんよコーナー",
+    lat: 34.7055,
+    lng: 137.7325,
+    type: "indoor",
+    category: "indoor",
+    quiet: true,
+    score: 94,
+    tags: ["静岡", "こども館", "はいはい", "授乳室", "屋内"],
+    note: "乳幼児が安心して遊べるお家のようなゾーンと、はいはい・あんよコーナーがある。",
+    area: "静岡県浜松市中央区",
+    bestTime: "平日午前、休日は開館直後",
+    facilities: ["はいはいコーナー", "赤ちゃんコーナー", "授乳室", "おむつ替え", "親子トイレ"],
+    ground: "乳幼児向けの屋内コーナー。はいはい目的にかなり向く。",
+    crowd: "休日や長期休みは混みやすい。",
+    caution: "利用料金・開館日・対象年齢を公式で確認。",
+    source: "浜松こども館公式",
+    sourceUrl: "https://kodomokan.entetsuassist-dms.com/facility/",
+  },
+  {
+    id: "aeon-hamamatsu-ichino",
+    name: "イオンモール浜松市野 赤ちゃんルーム/こどものあそびば",
+    lat: 34.7396,
+    lng: 137.7695,
+    type: "indoor",
+    category: "babyroom",
+    quiet: false,
+    score: 88,
+    tags: ["静岡", "イオン", "赤ちゃんルーム", "こどものあそびば", "屋内"],
+    note: "赤ちゃんルームと、柔らかい素材のマットを使った乳幼児向けあそびば情報がある。",
+    area: "静岡県浜松市中央区",
+    bestTime: "平日午前、休日は開店直後",
+    facilities: ["赤ちゃんルーム", "授乳室", "おむつ替え", "電子レンジ", "こどものあそびば"],
+    ground: "2Fの乳幼児向けあそびばは柔らかいマット素材の案内あり。",
+    crowd: "休日と雨の日は混みやすい。",
+    caution: "対象年齢・利用ルール・混雑を現地表示で確認。",
+    source: "イオンモール浜松市野公式",
+    sourceUrl: "https://www.aeon.jp/sc/hamamatsuichino/special/kidsguide/",
+  },
+  {
+    id: "lalaport-numazu-babyroom",
+    name: "ららぽーと沼津 ベビー休憩室/キッズスペース",
+    lat: 35.1116,
+    lng: 138.8586,
+    type: "indoor",
+    category: "babyroom",
+    quiet: false,
+    score: 84,
+    tags: ["静岡", "ららぽーと", "ベビー休憩室", "キッズスペース", "屋内"],
+    note: "ベビー休憩室やキッズスペース案内がある、東部エリアの大型商業施設。",
+    area: "静岡県沼津市",
+    bestTime: "平日午前、休日は開店直後",
+    facilities: ["ベビー休憩室", "授乳室", "キッズスペース", "キッズトイレ", "駐車場"],
+    ground: "キッズスペース中心。はいはいは対象年齢と床面を現地確認。",
+    crowd: "休日昼以降はフードコート周辺が混みやすい。",
+    caution: "ベビー休憩室・キッズスペースの位置をフロアガイドで確認。",
+    source: "ららぽーと沼津公式",
+    sourceUrl: "https://mitsui-shopping-park.com/lalaport/numazu/service/",
+  },
 ];
 
 const storageKey = "haihai-map-custom-places";
@@ -516,6 +636,48 @@ function googleMapsUrl(place) {
   return `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(`${place.name} ${place.lat},${place.lng}`)}`;
 }
 
+function googleMapsAppUrl(place) {
+  const latLng = `${place.lat},${place.lng}`;
+  const label = encodeURIComponent(place.name);
+  const fallback = encodeURIComponent(googleMapsUrl(place));
+
+  if (/android/i.test(navigator.userAgent)) {
+    return `intent://maps.google.com/maps?api=1&q=${latLng}(${label})#Intent;scheme=https;package=com.google.android.apps.maps;S.browser_fallback_url=${fallback};end`;
+  }
+
+  if (/iphone|ipad|ipod/i.test(navigator.userAgent)) {
+    return `comgooglemaps://?q=${latLng}&center=${latLng}&zoom=16`;
+  }
+
+  return googleMapsUrl(place);
+}
+
+function openGoogleMaps(event) {
+  const link = event.target.closest("[data-google-map-link]");
+  if (!link) return;
+
+  event.preventDefault();
+  event.stopPropagation();
+
+  const place = {
+    name: link.dataset.name,
+    lat: Number(link.dataset.lat),
+    lng: Number(link.dataset.lng),
+  };
+  const fallbackUrl = googleMapsUrl(place);
+  const appUrl = googleMapsAppUrl(place);
+
+  if (appUrl === fallbackUrl) {
+    window.open(fallbackUrl, "_blank", "noopener,noreferrer");
+    return;
+  }
+
+  window.location.href = appUrl;
+  window.setTimeout(() => {
+    window.location.href = fallbackUrl;
+  }, 900);
+}
+
 function getFilteredPlaces() {
   const query = state.query.trim().toLowerCase();
   return getPlaces()
@@ -586,14 +748,12 @@ function renderList(places) {
           .map((tag) => `<span class="tag ${tagClass(place, tag)}">${escapeHtml(tag)}</span>`)
           .join("")}
       </div>
-      <a class="map-link" href="${googleMapsUrl(place)}" target="_blank" rel="noopener noreferrer" aria-label="${escapeHtml(place.name)}をGoogleマップで開く">
-        Googleマップで開く
+      <a class="map-link" href="${googleMapsUrl(place)}" data-google-map-link data-name="${escapeHtml(place.name)}" data-lat="${escapeHtml(place.lat)}" data-lng="${escapeHtml(place.lng)}" target="_blank" rel="noopener noreferrer" aria-label="${escapeHtml(place.name)}をGoogleマップで開く">
+        Googleマップアプリで開く
       </a>
     `;
     card.addEventListener("click", () => focusPlace(place.id));
-    card.querySelector(".map-link").addEventListener("click", (event) => {
-      event.stopPropagation();
-    });
+    card.querySelector(".map-link").addEventListener("click", openGoogleMaps);
     card.addEventListener("keydown", (event) => {
       if (event.key === "Enter" || event.key === " ") {
         event.preventDefault();
@@ -617,26 +777,28 @@ function popupHtml(place) {
   const details = getPlaceDetails(place);
   const distance = formatDistance(getDistanceKm(place));
   return `
-    <div class="popup-head">
-      <p class="popup-title">${escapeHtml(place.name)}</p>
-      <span>${distance ? escapeHtml(distance) : `${escapeHtml(place.score)}点`}</span>
-    </div>
-    <p class="popup-category">${escapeHtml(categoryLabel(place))}</p>
-    <p class="popup-note">${escapeHtml(place.note)}</p>
-    <dl class="popup-details">
-      <div><dt>エリア</dt><dd>${escapeHtml(details.area)}</dd></div>
-      <div><dt>おすすめ</dt><dd>${escapeHtml(details.bestTime)}</dd></div>
-      <div><dt>床・地面</dt><dd>${escapeHtml(details.ground)}</dd></div>
-      <div><dt>混み具合</dt><dd>${escapeHtml(details.crowd)}</dd></div>
-      <div><dt>注意</dt><dd>${escapeHtml(details.caution)}</dd></div>
-      <div><dt>確認元</dt><dd>${escapeHtml(details.source)}</dd></div>
-    </dl>
-    <div class="popup-facilities">
-      ${details.facilities.map((item) => `<span>${escapeHtml(item)}</span>`).join("")}
-    </div>
-    <a class="map-link popup-map-link" href="${googleMapsUrl(place)}" target="_blank" rel="noopener noreferrer">
-      Googleマップで開く
-    </a>
+    <article class="map-popup-card">
+      <header class="popup-head">
+        <div>
+          <p class="popup-category">${escapeHtml(categoryLabel(place))}</p>
+          <p class="popup-title">${escapeHtml(place.name)}</p>
+        </div>
+        <span>${distance ? escapeHtml(distance) : `${escapeHtml(place.score)}点`}</span>
+      </header>
+      <p class="popup-note">${escapeHtml(place.note)}</p>
+      <div class="popup-facilities">
+        ${details.facilities.slice(0, 5).map((item) => `<span>${escapeHtml(item)}</span>`).join("")}
+      </div>
+      <dl class="popup-details">
+        <div><dt>エリア</dt><dd>${escapeHtml(details.area)}</dd></div>
+        <div><dt>おすすめ</dt><dd>${escapeHtml(details.bestTime)}</dd></div>
+        <div><dt>床面</dt><dd>${escapeHtml(details.ground)}</dd></div>
+        <div><dt>注意</dt><dd>${escapeHtml(details.caution)}</dd></div>
+      </dl>
+      <a class="map-link popup-map-link" href="${googleMapsUrl(place)}" data-google-map-link data-name="${escapeHtml(place.name)}" data-lat="${escapeHtml(place.lat)}" data-lng="${escapeHtml(place.lng)}" target="_blank" rel="noopener noreferrer">
+        Googleマップアプリで開く
+      </a>
+    </article>
   `;
 }
 
@@ -926,6 +1088,7 @@ elements.quietOnly.addEventListener("change", (event) => {
 });
 
 elements.locate.addEventListener("click", locateUser);
+document.addEventListener("click", openGoogleMaps);
 
 elements.sheetToggle.addEventListener("click", () => {
   setSheetCollapsed(!elements.appShell.classList.contains("sheet-collapsed"));
